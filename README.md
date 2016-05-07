@@ -30,7 +30,7 @@ Příklady použití: <br>
 vytvoření klasifikátoru: <br>
 `python classify_first_n.py movie_reviews4` <br>
 
-práce s klasikátorem: <br>
+práce s klasifikátorem: <br>
 `python interactive_tester.py` <br>
 
 Stáhnutí dat z CSFD: <br>
