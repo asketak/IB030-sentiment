@@ -13,8 +13,20 @@ from nltk.corpus.reader import *
 import nltk.classify.util
 
 import sys, os
+import cPickle
+from feats import *
 
 pathname = os.path.dirname(sys.argv[0])        
+
+def pickleObject():
+	obj = classifier
+	savefile = open('classifier.pickle', 'w')
+	cPickle.dump(obj, savefile, cPickle.HIGHEST_PROTOCOL)
+
+def pickleFeats():
+	obj = bigram_words_in_sentence
+	savefile = open('feats.pickle', 'w')
+	cPickle.dump(obj, savefile, cPickle.HIGHEST_PROTOCOL)
 
 nltk.data.path.append(os.path.abspath(pathname)+'/data'); 
 movie_reviews = LazyCorpusLoader(
@@ -25,10 +37,7 @@ movie_reviews = LazyCorpusLoader(
 
 train_test_ratio = 2.0/3
 
-def bigram_words_in_sentence(words, score_fn=BigramAssocMeasures.dice, n=200):
-	bigram_finder = BigramCollocationFinder.from_words(words)
-	bigrams = bigram_finder.nbest(score_fn, n)
-	return dict([(ngram, True) for ngram in itertools.chain(words, bigrams)])
+
  
  
 files_in_neg = movie_reviews.fileids('neg')
@@ -47,3 +56,6 @@ print 'training on %d paragraphs and testing on %d paragraphs' % (len(train_data
 classifier = NaiveBayesClassifier.train(train_data)
 print 'accuracy:', nltk.classify.util.accuracy(classifier, test_data)
 classifier.show_most_informative_features(20)
+
+pickleFeats()
+pickleObject()

@@ -15,7 +15,8 @@ from nltk.corpus.reader import *
 import nltk.classify.util
 
 import sys, os
-
+import cPickle
+from feats import *
 pathname = os.path.dirname(sys.argv[0])        
 
 nltk.data.path.append(os.path.abspath(pathname)+'/data'); 
@@ -27,8 +28,17 @@ movie_reviews = LazyCorpusLoader(
 train_test_ratio = 3.0/4 
 num_of_words = 10000
 
-def best_word_feats(words):
-    return dict([(word, True) for word in words if word in bestwords])
+def pickleObject():
+    obj = classifier
+    savefile = open('classifier.pickle', 'w')
+    cPickle.dump(obj, savefile, cPickle.HIGHEST_PROTOCOL)
+
+def pickleFeats():
+    obj = words_in_sentence
+    savefile = open('feats.pickle', 'w')
+    cPickle.dump(obj, savefile, cPickle.HIGHEST_PROTOCOL)
+
+
  
 word_dist = FreqDist()
 label_word_dist = ConditionalFreqDist()
@@ -62,8 +72,8 @@ print 'using naive bayes only on best %d words ' % num_of_words
 files_in_neg = movie_reviews.fileids('neg')
 files_in_pos = movie_reviews.fileids('pos')
  
-neg_data = [(best_word_feats(movie_reviews.words(fileids=[f])), 'neg') for f in files_in_neg]
-pos_data = [(best_word_feats(movie_reviews.words(fileids=[f])), 'pos') for f in files_in_pos]
+neg_data = [(best_word_feats(movie_reviews.words(fileids=[f]),bestwords), 'neg') for f in files_in_neg]
+pos_data = [(best_word_feats(movie_reviews.words(fileids=[f]),bestwords), 'pos') for f in files_in_pos]
 
 
 negative_first_test_pos = int(len(neg_data)*train_test_ratio)
@@ -79,3 +89,5 @@ classifier = NaiveBayesClassifier.train(train_data)
 print 'accuracy:', nltk.classify.util.accuracy(classifier, test_data)
 classifier.show_most_informative_features(20)
  
+pickleFeats()
+pickleObject()
