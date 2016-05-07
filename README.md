@@ -1,27 +1,27 @@
 # IB030-sentiment  
 
-Programátorský úkol do IB030.  
+Programátorský úkol do IB030  
 Program na analýzu sentimentu v českých textech, zejména pak v recenzích filmů.  
 
 
 Prerekvizity:
-Je nutne mit nainstalovanou knihovny nltk a cPython pro python
-pip install nltk  
-pip install cPython  
+Je nutne mit nainstalovanou knihovny nltk a cPython pro python  <br>
+pip install nltk     <br>
+pip install cPython  <br>
 
 Instalace:
 
-wget https://github.com/asketak/IB030-sentiment/archive/master.zip
-unzip master.zip
-cd IB030-sentiment-master/
+wget https://github.com/asketak/IB030-sentiment/archive/master.zip <br>
+unzip master.zip <br>
+cd IB030-sentiment-master/ <br>
 
 Použití:  
 
-Každý generátor má jeden argument, jméno korpusu pro učení a vyhodnocení.
-Všechny generátory dělí data na data pro učení a data pro testovaní v poměru daném proměnnou `train_test_ratio` ve skriptu.
-Generátor vytvoří klasifikátor, otestuje ho vyhodnotí přesnost a ukládá naučený klasifikátor a funkci pro extrakci vlastností z věty do souboru classifie.pickle a feats.pickle  
+Každý generátor má jeden argument, jméno korpusu pro učení a vyhodnocení. <br>
+Všechny generátory dělí data na data pro učení a data pro testovaní v poměru daném proměnnou `train_test_ratio` ve skriptu.<br>
+Generátor vytvoří klasifikátor, otestuje ho vyhodnotí přesnost a ukládá naučený klasifikátor a funkci pro extrakci vlastností z věty do souboru classifie.pickle a feats.pickle  <br>
 
-Skript interactive_tester.py načte *.pickle soubory a umožňuje uživateli zadávat věty, u kterých klasikátor určí sentiment. 
+Skript interactive_tester.py načte *.pickle soubory a umožňuje uživateli zadávat věty, u kterých klasikátor určí sentiment. <br>
 
 Repozitář obsahuje:  
 
