@@ -51,7 +51,7 @@ def retry(ExceptionToCheck, tries=4, delay=3, backoff=2, logger=None):
     return deco_retry
 
 def warning(*objs):
-    print("WARNING: ", *objs, file=sys.stderr)
+    print("ITERACE: ", *objs, file=sys.stderr)
 
 @retry(Exception, tries=8, delay=3, backoff=2)
 def send(url):

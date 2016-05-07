@@ -33,6 +33,9 @@ vytvoření klasifikátoru: <br>
 práce s klasikátorem: <br>
 `python interactive_tester.py` <br>
 
+Stáhnutí dat z CSFD: <br>
+`python csfd_fetcher.py > scraped_data.txt` <br>
+
 Repozitář obsahuje:  
 
 * Generátory klasifikátorů:
