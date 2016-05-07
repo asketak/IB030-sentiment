@@ -6,6 +6,24 @@ from nltk.collocations import BigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
 from nltk.probability import FreqDist, ConditionalFreqDist
 
+import re
+
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus.util import LazyCorpusLoader
+from nltk.corpus.reader import *
+
+import nltk.classify.util
+
+import sys, os
+
+pathname = os.path.dirname(sys.argv[0])        
+
+nltk.data.path.append(os.path.abspath(pathname)+'/data'); 
+movie_reviews = LazyCorpusLoader(
+    sys.argv[1], CategorizedPlaintextCorpusReader,
+    r'(?!\.).*\.txt', cat_pattern=r'(neg|pos)/.*',
+    encoding='utf-8')
+
 train_test_ratio = 3.0/4 
 num_of_words = 10000
 
