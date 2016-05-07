@@ -28,7 +28,7 @@ Skript interactive_tester.py načte *.pickle soubory a umožňuje uživateli zad
 Příklady použití: <br>
 
 vytvoření klasifikátoru: <br>
-`python classify_first_n.py movie_reviews` <br>
+`python classify_first_n.py movie_reviews4` <br>
 
 práce s klasikátorem: <br>
 `python interactive_tester.py` <br>
