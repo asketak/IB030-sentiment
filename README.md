@@ -6,14 +6,16 @@ Program na analýzu sentimentu v českých textech, zejména pak v recenzích fi
 
 Prerekvizity:
 Je nutne mit nainstalovanou knihovny nltk a cPython pro python  <br>
-pip install nltk     <br>
-pip install cPython  <br>
+```
+pip install nltk    
+pip install cPython  
+```
 
 Instalace:
 ```
-wget https://github.com/asketak/IB030-sentiment/archive/master.zip <br>
-unzip master.zip <br>
-cd IB030-sentiment-master/ <br>
+wget https://github.com/asketak/IB030-sentiment/archive/master.zip 
+unzip master.zip 
+cd IB030-sentiment-master/ 
 ```
 Použití:  
 
