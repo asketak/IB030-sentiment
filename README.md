@@ -25,28 +25,28 @@ Skript interactive_tester.py načte *.pickle soubory a umožňuje uživateli zad
 
 Repozitář obsahuje:  
 
-generátory klasifikátorů:
+* Generátory klasifikátorů:
 
-classifier.py:  
+  * classifier.py:  
   jednoduchá klasifikace na základě četnosti výskytu slov  
   
-classifier_bigrams.py   
+  * classifier_bigrams.py   
   klasifikuje na základě dvojic slov, je tak schopný odlišit kontext slova "rád" ve spojeních "nemám rád" a "mám rád".  
 
-classify_first_n.py:  
+  * classify_first_n.py:  
   snaha zbavit se šumu a slov, které se vyskytují v obou kategoriích  
   klasifikuje na základě 10 000 "nejvyhraněnějších" slov  
 
-interaktivní skript:
-  interactive_tester.py - program kde můžete klasifikátoru postupně předhazovat věty pro určení sentimentu
+* interaktivní skript:
+  * interactive_tester.py - program kde můžete klasifikátoru postupně předhazovat věty pro určení sentimentu
 
-csfd_fetcher.py - program pro stahování komentáře a příslušného hodnocení z csfd.cz  
+* csfd_fetcher.py - program pro stahování komentáře a příslušného hodnocení z csfd.cz  
 
-data - adresář s daty, která byla použita a mohou sloužit dále pro testování  
+* data - adresář s daty, která byla použita a mohou sloužit dále pro testování  
 
-  scraped_data.txt - neupravená stáhnutá data z csfd_fetcher.py  
-  0-5.txt - data rozdělená dle hodnocení  
-  movie_reviews - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-3*)  
-  movie_reviews2 - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-2*), 3* vynechány  
-  movie_reviews3 - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-2*), 3* vynechány, odebrány veškeré číslovky z hodnocení, odebrány speciální znaky a diakritika, odebrány komentáře kratší než 40 písmen  
-  movie_reviews4 - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-2*), 3* vynechány, odebrány veškeré číslovky z hodnocení, odebrány speciální znaky a diakritika, odebrány komentáře kratší než 40 písmen, vše převedeno na lowercase  
+ * scraped_data.txt - neupravená stáhnutá data z csfd_fetcher.py  
+ * 0-5.txt - data rozdělená dle hodnocení  
+ * movie_reviews - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-3*)  
+ * movie_reviews2 - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-2*), 3* vynechány  
+ * movie_reviews3 - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-2*), 3* vynechány, odebrány veškeré číslovky z hodnocení, odebrány speciální znaky a diakritika, odebrány komentáře kratší než 40 písmen  
+ * movie_reviews4 - data rozdělená na pozitivní sentiment(4-5*) a negativní(0-2*), 3* vynechány, odebrány veškeré číslovky z hodnocení, odebrány speciální znaky a diakritika, odebrány komentáře kratší než 40 písmen, vše převedeno na lowercase  
