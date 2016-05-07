@@ -10,11 +10,11 @@ pip install nltk     <br>
 pip install cPython  <br>
 
 Instalace:
-
+```
 wget https://github.com/asketak/IB030-sentiment/archive/master.zip <br>
 unzip master.zip <br>
 cd IB030-sentiment-master/ <br>
-
+```
 Použití:  
 
 Každý generátor má jeden argument, jméno korpusu pro učení a vyhodnocení. <br>
@@ -22,6 +22,14 @@ Všechny generátory dělí data na data pro učení a data pro testovaní v pom
 Generátor vytvoří klasifikátor, otestuje ho vyhodnotí přesnost a ukládá naučený klasifikátor a funkci pro extrakci vlastností z věty do souboru classifie.pickle a feats.pickle  <br>
 
 Skript interactive_tester.py načte *.pickle soubory a umožňuje uživateli zadávat věty, u kterých klasikátor určí sentiment. <br>
+
+Příklady použití: <br>
+
+vytvoření klasifikátoru: <br>
+`python classify_first_n.py movie_reviews` <br>
+
+práce s klasikátorem: <br>
+`python interactive_tester.py` <br>
 
 Repozitář obsahuje:  
 
