@@ -8,7 +8,7 @@ Prerekvizity:
 Je nutne mit nainstalovanou knihovny nltk a cPython pro python  <br>
 ```
 pip install nltk    
-pip install cPython  
+pip install cPickle  
 ```
 
 Instalace:
